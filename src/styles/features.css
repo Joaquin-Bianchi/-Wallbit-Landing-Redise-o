@@ -1,0 +1,161 @@
+.wallet {
+  --bg-color: #0d99ff;
+  --bg-color-light: #4e4c4c;
+  --text-color-hover: #ffffff;
+  --box-shadow-color: rgba(168, 168, 168, 0.48);
+}
+
+.card {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  min-height: 400px;
+  background: #fff;
+  border-radius: 20px;
+  border-top: 1px solid rgba(224, 224, 224, 0.355);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+  padding: 30px 20px;
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.005) translateZ(0);
+  box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11),
+    0 24px 46px var(--box-shadow-color);
+}
+
+.card:hover .overlay {
+  transform: scale(6) translateZ(0);
+}
+
+.card:hover .circle {
+  border-color: var(--bg-color-light);
+  background: var(--bg-color);
+}
+
+.card:hover .circle:after {
+  background: var(--bg-color-light);
+}
+
+.card:hover .title,
+.card:hover .subtitle,
+.card:hover .description {
+  color: var(--text-color-hover);
+}
+
+.card .title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a202c;
+  margin-top: 20px;
+  z-index: 1000;
+  transition: color 0.3s ease-out;
+}
+
+.card .subtitle {
+  font-size: 16px;
+  color: var(--bg-color);
+  margin-top: 8px;
+  z-index: 1000;
+  transition: color 0.3s ease-out;
+}
+
+.card .description {
+  font-size: 14px;
+  color: #4a5568;
+  margin-top: 16px;
+  text-align: center;
+  z-index: 1000;
+  transition: color 0.3s ease-out;
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease-out;
+}
+
+.circle:after {
+  content: "";
+  width: 108px;
+  height: 108px;
+  display: block;
+  position: absolute;
+  background: var(--bg-color);
+  border-radius: 50%;
+  top: 6px;
+  left: 6px;
+  transition: opacity 0.3s ease-out;
+}
+
+.circle svg {
+  z-index: 10000;
+  transform: translateZ(0);
+}
+
+.overlay {
+  width: 120px;
+  position: absolute;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--bg-color);
+  top: 30px;
+  left: calc(50% - 60px);
+  z-index: 0;
+  transition: transform 0.3s ease-out;
+}
+
+@media (min-width: 768px) {
+  .card {
+    max-width: 300px;
+  }
+
+  .card .title {
+    font-size: 24px;
+    margin-top: 30px;
+  }
+
+  .card .subtitle {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .card .description {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .circle:after {
+    width: 135px;
+    height: 135px;
+    top: 7px;
+    left: 7px;
+  }
+
+  .overlay {
+    width: 150px;
+    height: 150px;
+    left: calc(50% - 75px);
+  }
+}
